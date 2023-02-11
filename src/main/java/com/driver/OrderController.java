@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/orders")
+@RequestMapping("orders")
 public class OrderController {
 
-    //@Autowired
+   //@Autowired
     OrderService orderService=new OrderService();
 
     @PostMapping("/add-order")

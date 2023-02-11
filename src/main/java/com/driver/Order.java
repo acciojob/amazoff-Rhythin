@@ -28,23 +28,24 @@ public class Order {
     public static String getDeliveryTimeAsString(int timeInt){
         int hours=timeInt/60;
         int min=timeInt%60;
-        String time="";
+        String hrStr="";
+        String minStr="";
 
         if(hours<10){
-            time=time+"0"+hours+":";
+            hrStr="0"+hours;
         }
         else{
-            time=time+hours+":";
+            hrStr=""+hours;
         }
 
         if(min<10){
-            time=time+"0"+min;
+            minStr="0"+min;
         }
         else{
-            time=time+min;
+            minStr=""+min;
         }
 
-        return time;
+        return hrStr+":"+minStr;
     }
 
     public static int getDeliveryTimeAsInt(String timeString){

@@ -138,10 +138,14 @@ public class OrderRepository {
         //if it is assigned order get partner id and remove pairing from order-partner-pair db and from partner-orders list
         if(orderPartnerPair.containsKey(orderId)){
             String partnerId=orderPartnerPair.get(orderId);
+
             //removing from order assigning pair
             orderPartnerPair.remove(orderId);
+
             //removing from list or orders to be delivered by partner
             partnerOrders.get(partnerId).remove(orderId);
+
+            deliveryPartners.get(partnerId).setNumberOfOrders( partnerOrders.get(partnerId).size());
         }
 
     }
