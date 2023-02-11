@@ -44,9 +44,9 @@ public class OrderRepository {
     //3
     public void addOrderPartnerPair(String orderId, String partnerId) {
         //get orderlist of partner and update with current order
-        List<String> orderlist=partnerOrders.get(partnerId);
-        if(orderlist==null) orderlist=new ArrayList<>();
+        List<String> orderlist=partnerOrders.getOrDefault(partnerId, new ArrayList<>());
         orderlist.add(orderId);
+        partnerOrders.put(partnerId,orderlist);
 
         //update orderpartner pair
         orderPartnerPair.put(orderId, partnerId);
