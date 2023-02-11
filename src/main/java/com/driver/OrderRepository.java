@@ -80,8 +80,7 @@ public class OrderRepository {
 
     //8
     public List<String> getAllOrders() {
-        List<String>ordersList= new ArrayList<>(orders.keySet());
-        return ordersList;
+        return new ArrayList<>(orders.keySet());
     }
 
     //9
